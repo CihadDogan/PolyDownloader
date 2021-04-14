@@ -19,11 +19,11 @@ class PolyScrapper:
         btnFilters = self.driver.find_element_by_xpath("/html/body/c-wiz/div/div[3]/div[1]/c-wiz/div[1]/div/div/div[2]/button")
         btnFilters.click()
         time.sleep(1)
-        #
+
         btnFilterOtherObjects = self.driver.find_element_by_xpath("/html/body/c-wiz/div/div[3]/div[1]/c-wiz/div[1]/c-wiz/div/div[1]/ul/li[4]")
         btnFilterOtherObjects.click()
         time.sleep(1)
-        #
+
         btnFilterRearangable = self.driver.find_element_by_xpath("/html/body/c-wiz/div/div[3]/div[1]/c-wiz/div[1]/c-wiz/div/div[2]/ul/li[1]")
         btnFilterRearangable.click()
 

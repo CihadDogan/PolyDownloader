@@ -33,19 +33,22 @@ class FileManager:
             return False
 
     def cut_and_paste_last_file(self, folderName, newFileName):
-        # son dosyayi bul
+        
+        # find last downloaded
         files = os.listdir(self.downloadsPath)
         paths = [os.path.join(self.downloadsPath, basename) for basename in files]
         lastFile = max(paths, key = os.path.getctime)
         
-        # rar veya zip bekliyoruz
+        # it should be .zip file
         if lastFile.find(".zip") != -1:
-            # ismi degistir
+            
+            # change name
             newName = self.downloadsPath + "/" + newFileName + ".zip"
             os.rename(lastFile, newName)
             
             targetPath = self.destinationPath + "/" + folderName
-            # tasi
+            
+            # move it to destination path
             if os.path.exists(targetPath + "/" + newFileName + ".zip" ) == False:
                 shutil.move(newName, targetPath)
             else:
