@@ -15,7 +15,7 @@ def replace_non_ascii(unicode_string):
 def main():
     """ Start point of app """
 
-    # Some paths
+    # Driver path
     driverPath = os.path.dirname(os.path.abspath(__file__)) + '/chromedriver_win32/chromedriver.exe'
 
     # Objects
