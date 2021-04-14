@@ -5,4 +5,5 @@ A webscrapper for Poly Google website (poly.google.com). I created this project 
 * Download folder is default windows download location which something like 'C:\Users\UserMachine\Downloads'. Otherwise you have change path variable(downloadsPath) from file_manager.py file.
 
 Example automated working :
-![](name-of-giphy.gif)
+
+![](working.gif)
