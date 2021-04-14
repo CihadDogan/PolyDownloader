@@ -2,10 +2,11 @@ import poly_scrapper as ps
 import file_manager as fm
 import time
 import datetime
-import re 
+import re
+import os
 
 def replace_non_ascii(unicode_string):
-    
+
     real = re.sub('[\W_]+', '', unicode_string)
     real = real.replace(" ", "")
 
@@ -14,14 +15,11 @@ def replace_non_ascii(unicode_string):
 def main():
     """ Start point of app """
 
-    # Paths !!!!!
-    driverPath = "D:/VisualCodeProjects/PolyDownloaderRepo/chromedriver_win32/chromedriver.exe"
-    downloadsPath = "C:/Users/Cihad/Downloads/"
-    destinationPath = "D:/Kutuphane/PolyScrapLibrary"
-    wordsPath = 'D:/VisualCodeProjects/PolyDownloaderRepo/words.txt'
+    # Some paths
+    driverPath = os.path.dirname(os.path.abspath(__file__)) + '/chromedriver_win32/chromedriver.exe'
 
     # Objects
-    objFileManager = fm.FileManager(downloadsPath, destinationPath, wordsPath)
+    objFileManager = fm.FileManager()
     objScrapper = ps.PolyScrapper(driverPath)
 
     # Get words to search from file (words.txt)

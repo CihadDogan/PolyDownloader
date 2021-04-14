@@ -1,13 +1,14 @@
 import shutil
 import glob
 import os
+from pathlib import Path
 
 class FileManager: 
 
-    def __init__(self, downloadsPath, destinationPath, wordsPath):
-        self.downloadsPath = downloadsPath
-        self.destinationPath = destinationPath
-        self.wordsPath = wordsPath
+    def __init__(self):
+        self.downloadsPath = str(os.path.join(Path.home(), "Downloads"))
+        self.destinationPath = os.path.dirname(os.path.abspath(__file__)) + '/downloadedFiles/'
+        self.wordsPath = os.path.dirname(os.path.abspath(__file__)) + '/words.txt'
 
     def read_all_words(self):
         with open(self.wordsPath) as f:
@@ -47,7 +48,7 @@ class FileManager:
             os.rename(lastFile, newName)
             
             targetPath = self.destinationPath + "/" + folderName
-            
+
             # move it to destination path
             if os.path.exists(targetPath + "/" + newFileName + ".zip" ) == False:
                 shutil.move(newName, targetPath)
