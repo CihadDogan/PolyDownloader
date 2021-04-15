@@ -2,3 +2,14 @@ Venus
 Mars
 Mercury
 Sun
+Cloud
+Gun
+Sword
+Katana
+Rifle
+Mountain
+Box
+Barrel
+Vegatable
+Coin
+Diamond
